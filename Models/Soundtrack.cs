@@ -1,28 +1,26 @@
-﻿using DigitalGameStore.Interfaces;
+﻿using DigitalGameStore;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace DigitalGameStore.Models
+namespace GameStore.Models
 {
     public class Soundtrack : Product, IDownloadable
     {
-        public Soundtrack(string title, decimal price)
+        public string GameName { get; set; }
+
+        public Soundtrack(string title, decimal price, string gameName)
             : base(title, price)
         {
+            GameName = gameName;
         }
 
         public override void ShowInfo()
         {
-            Console.WriteLine($"Soundtrack: {Title}, Hind: {Price}€");
+            Console.WriteLine($"[Soundtrack] {Title} | Mäng: {GameName} | Hind: {Price}€");
         }
 
         public void Download()
         {
-            if (IsOwned())
-                Console.WriteLine($"Laadin alla soundtracki: {Title}");
-            else
-                Console.WriteLine($"{Title} tuleb enne ostma.");
+            Console.WriteLine($"Soundtrack '{Title}' laaditakse alla...");
         }
     }
 }

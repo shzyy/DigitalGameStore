@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace DigitalGameStore.Models
+namespace GameStore.Models
 {
     public class Subscription : Product
     {
@@ -16,8 +14,7 @@ namespace DigitalGameStore.Models
 
         public override void ShowInfo()
         {
-            Console.WriteLine($"Tellimus: {Title}, Kestus: {DurationDays} päeva, Hind: {Price}€");
+            Console.WriteLine($"[Subscription] {Title} | Kestus: {DurationDays} päeva | Hind: {Price}€");
         }
     }
 }
-

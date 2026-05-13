@@ -1,10 +1,7 @@
-﻿using DigitalGameStore.Interfaces;
+﻿using DigitalGameStore;
 using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
 
-namespace DigitalGameStore.Models
+namespace GameStore.Models
 {
     public class Game : Product, IDownloadable
     {
@@ -18,15 +15,12 @@ namespace DigitalGameStore.Models
 
         public override void ShowInfo()
         {
-            Console.WriteLine($"Mäng: {Title}, Žanr: {Genre}, Hind: {Price}€");
+            Console.WriteLine($"[Game] {Title} | Žanr: {Genre} | Hind: {Price}€");
         }
 
         public void Download()
         {
-            if (IsOwned())
-                Console.WriteLine($"Laadin alla mängu: {Title}");
-            else
-                Console.WriteLine($"{Title} tuleb enne ostma.");
+            Console.WriteLine($"Mäng '{Title}' laaditakse alla...");
         }
     }
 }

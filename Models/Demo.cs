@@ -1,26 +1,23 @@
-﻿using DigitalGameStore.Interfaces;
+﻿using DigitalGameStore;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace DigitalGameStore.Models
+namespace GameStore.Models
 {
     public class Demo : Product, IDownloadable
     {
         public Demo(string title)
             : base(title, 0)
         {
-            Buy();
         }
 
         public override void ShowInfo()
         {
-            Console.WriteLine($"Demo: {Title}, tasuta prooviversioon");
+            Console.WriteLine($"[Demo] {Title} | Tasuta prooviversioon");
         }
 
         public void Download()
         {
-            Console.WriteLine($"Laadin alla demo: {Title}");
+            Console.WriteLine($"Demo '{Title}' laaditakse alla...");
         }
     }
 }
